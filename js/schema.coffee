@@ -4,9 +4,14 @@
 
 window.schema =
   type: "array"
+  minItems: 1
+  required: true
+  uniqueItems: true
   items:
     type: "object"
     properties:
+      
+      #basic fields
       
       title:
         type: "string"
@@ -44,3 +49,65 @@ window.schema =
       organization:
         type: "string"
         required: true
+        
+      #expanded fields
+      
+      modified:
+        type: "string"
+        format: "datetime"
+      
+      format:
+        type: [ "string", "array" ]
+      
+      publisher:
+        type: "string"
+        
+      issued:
+        type: "string"
+        format: "datetime"
+      
+      accrualPeriodicity:
+        type: "string"
+      
+      identifier:
+        type: [ "string", "integer" ]
+        
+      spatial: {} # what format is this?
+      
+      temporal: {} # what format is this?
+      
+      language: 
+        type: "string"
+      
+      granularity:
+        type: "string"
+
+      dataQuality:
+        type: "string"
+        
+      theme:
+        type: "string"
+        
+      references:
+        type: "object"
+      
+      distribution:
+        type: [ "string", "array", "object" ]
+      
+      size:
+        type: [ "string", "integer" ]
+      
+      format: 
+        type: [ "string", "array" ]
+      
+      download:
+        type: "string"
+        format: "url"
+      
+      WebService:
+        type: "string"
+        format: "url"
+        
+      Feed:
+        type: "string"
+        format: "url"
