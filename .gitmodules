@@ -1,0 +1,6 @@
+[submodule "js/amanda"]
+	path = js/amanda
+	url = git://github.com/Baggz/Amanda.git
+[submodule "js/codemirror"]
+	path = js/codemirror
+	url = git://github.com/marijnh/CodeMirror.git
