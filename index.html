@@ -33,33 +33,61 @@
 
 <label for="input">Enter data file:</label>
 <textarea id="input">[
-  {
-    "title":          "Example",
-    "description":    "An example valid data file",
-    "dataDictionary": "http://foo.gov",
-    "accessURL":      "http://foo.gov",
-    "license":        "public domain",
-    "public":         true,
-    "organization":   "Project Open Data",
-    "keywords":       [
-                        "example", 
-                        "schema" 
-                      ]
-  },
-  {
-    "title":          "Another Example",
-    "description":    "Another example dataset",
-    "dataDictionary": "http://foo.gov",
-    "accessURL":      "http://foo.gov",
-    "license":        "public domain",
-    "public":          true,
-    "organization":   "Project Open Data",
-    "keywords":       [ 
-                        "another", 
-                        "example" 
-                      ]
-  }
-]</textarea>
+    {
+        "title": "Data Catalog",
+        "description": "Version 1.0",
+        "keyword": "catalog",
+        "modified": "2013-05-09",
+        "publisher": "US Department of X",
+        "person": "Contact Person",
+        "mbox": "contact.person@agency.gov",
+        "identifier": "1",
+        "accessLevel": "Public",
+        "distribution": [{
+            "accessURL": "http://agency.gov/data.json",
+            "format": "json"
+            }]
+    },
+    {
+        "title": "Public Elementary/Secondary Listing",
+        "description": "The purpose of the CCD nonfiscal surveys is to provide a listing of all schools and agencies providing free public elementary and secondary education, along with basic descriptive statistical information on each school and agency listed. Penalties apply for misuse, seehttp://nces.ed.gov/ncesglobal/data_usage_agreement.aspfor more details.",
+        "keyword": "education, schools",
+        "modified": "2011-11-19",
+        "publisher": "US Department of Education",
+        "person": "Open Data Initiative",
+        "mbox": "opendata@ed.gov",
+        "identifier": "ykv5-fn9t",
+        "accessLevel": "Public",
+        "dataDictionary": "http://nces.ed.gov/ccd/pdf/INsc09101a.pdf",
+        "distribution": [{
+            "accessURL": "https://explore.data.gov/views/ykv5-fn9t/rows.csv?accessType=DOWNLOAD",
+            "format": "csv",
+            "size": "200mb"
+        },{
+            "accessURL": "https://explore.data.gov/views/ykv5-fn9t/rows.json?accessType=DOWNLOAD",
+            "format": "json"
+        },{
+            "accessURL": "https://explore.data.gov/views/ykv5-fn9t/rows.xml?accessType=DOWNLOAD",
+            "format": "xml"
+        }],
+        "webService": "http://explore.data.gov/api/views/ykv5-fn9t/rows.json",
+        "license": "Public Domain",
+        "spatial": "US",
+        "temporal": "2009-09-01 00:00:00,2010-05-31 00:00:00",
+        "frequency": "one-time",
+        "language": "English",
+        "granularity": "",
+        "dataQuality": "true",
+        "theme": "education",
+        "references": "http://nces.ed.gov/ccd/data/txt/psu091alay.txt",
+        "landingPage": "http://ed.gov/developer",
+        "feed": "",
+        "systemOfRecords": "http://nces.ed.gov/ccd/"
+    }]</textarea>
+
+<input type="checkbox" id="require_if_available" name="require_if_available" value="true" onchange="window.rebuild_schema();project_open_data_validator.validate()"> Require "Required if Applicable" Fields<br>
+<input type="checkbox" id="require_extended" name="require_extended" value="true" onchange="window.rebuild_schema();project_open_data_validator.validate()"> Require all Extended Fields<br>
+
 
 <h3>Status</h3>
 
@@ -69,8 +97,8 @@
 <ul>
   <li><a href="https://gist.github.com/3952577">JSON 101</a></li>
   <li><a href="http://jsonlint.com/">JSON Validator</a> (useful for your JSON not properly parsing)</li>
-  <li><a href="http://project-open-data.github.com/common-core-metadata-schema/">Schema Definition</a>
-  <li><a href="http://project-open-data.github.com/open-data-catalog/">Reporting Requirements</a>
+  <li><a href="http://project-open-data.github.io/schema/">Schema Definition</a>
+
 </ul>
         </div> <!-- /container -->
 
