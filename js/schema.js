@@ -40,7 +40,7 @@
             type: "string",
             required: true
           },
-          person: {
+          contactPoint: {
             type: "string",
             required: true
           },
@@ -55,7 +55,7 @@
           accessLevel: {
             type: "string",
             required: true,
-            "enum": ["public", "restricted public", "non-public"]
+            "enum": ["public", "restricted public", "non-public", "public restricted"]
           },
           dataDictionary: {
             type: "string",

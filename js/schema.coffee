@@ -43,7 +43,7 @@ rebuild_schema = () ->
           type: "string"
           required: true
 
-        person:
+        contactPoint:
           type: "string"
           required: true
 
@@ -58,8 +58,9 @@ rebuild_schema = () ->
         accessLevel:
           type: "string"
           required: true
+          #note I am hacking in "public restricted" because inventory.data.gov currently has the wrong Enums. Should remove "public restricted" once they fix it https://github.com/GSA/enterprise-data-inventory/issues/16
           enum: [
-            "public", "restricted public", "non-public"
+            "public", "restricted public", "non-public", "public restricted"
           ]
 
         #
