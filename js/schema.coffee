@@ -57,7 +57,7 @@ rebuild_schema = () ->
           type: "string"
           required: true
           enum: [
-            "Public", "Restricted", "Private"
+            "public", "restricted public", "non-public"
           ]
 
         #
