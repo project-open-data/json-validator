@@ -34,7 +34,7 @@ rebuild_schema = () ->
 
         modified:
           type: "string"
-          # Amanda's built in "date-time" format is not broad enough to capture all variantes of ISO 8601, and specifically doesn't match the datetime output from inventory.data.gov. 
+          # Amanda's built in "date-time" format is not broad enough to capture all variants of ISO 8601, and specifically doesn't match the datetime output from inventory.data.gov. 
           # updated instead to use the regex suggested here: http://www.pelagodesign.com/blog/2009/05/20/iso-8601-date-validation-that-doesnt-suck/
           pattern: /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$/
           required: true
@@ -94,7 +94,7 @@ rebuild_schema = () ->
 
         temporal: {
           required: require_if_available()
-        } # what format is this?
+        } # should be ISO 8601 but I can't find a good regex that allows the range format to be expressed.
 
 
         #
@@ -111,7 +111,7 @@ rebuild_schema = () ->
 
         accrualPeriodicity:
           type: "string"
-          enum: ["hourly", "daily", "weekly", "yearly", "other"]
+          enum: ["Annual","Bimonthly","Semiweekly","Daily","Biweekly","Semiannual","Biennial","Triennial","Three times a week","Three times a month","Continuously updated","Monthly","Quarterly","Semimonthly","Three times a year","Weekly","Completely irregular","annual","bimonthly","semiweekly","daily","biweekly","semiannual","biennial","triennial","three times a week","three times a month","continuously updated","monthly","quarterly","semimonthly","three times a year","weekly","completely irregular"]
           required: require_extended()
 
         language:

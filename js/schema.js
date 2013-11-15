@@ -97,7 +97,7 @@
           },
           accrualPeriodicity: {
             type: "string",
-            "enum": ["hourly", "daily", "weekly", "yearly", "other"],
+            "enum": ["Annual", "Bimonthly", "Semiweekly", "Daily", "Biweekly", "Semiannual", "Biennial", "Triennial", "Three times a week", "Three times a month", "Continuously updated", "Monthly", "Quarterly", "Semimonthly", "Three times a year", "Weekly", "Completely irregular", "annual", "bimonthly", "semiweekly", "daily", "biweekly", "semiannual", "biennial", "triennial", "three times a week", "three times a month", "continuously updated", "monthly", "quarterly", "semimonthly", "three times a year", "weekly", "completely irregular"],
             required: require_extended()
           },
           language: {
