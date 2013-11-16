@@ -109,7 +109,7 @@
             required: require_extended()
           },
           dataQuality: {
-            type: "string",
+            type: "boolean",
             required: require_extended()
           },
           theme: {
