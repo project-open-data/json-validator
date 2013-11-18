@@ -29,6 +29,7 @@ rebuild_schema = () ->
           required: true
 
         keyword:
+          # This is supposed to be an array of strings (i.e. ["education", "school choice"], but allowing plain strings for now.
           type: ["string", "array"]
           required: true
 
@@ -120,7 +121,8 @@ rebuild_schema = () ->
           required: require_extended()
 
         language:
-          type: "string"
+          # Language is supposed to be an array of strings (i.e. ["en-US"]) but allowing strings only for now.
+          type: ["string", "array"]
           required: require_extended()
 
         granularity:
