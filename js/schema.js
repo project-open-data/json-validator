@@ -68,12 +68,12 @@
             required: require_if_available()
           },
           bureauCode: {
-            type: "string",
+            type: ["array", "string"],
             pattern: /\d{3}:\d{2}/,
             required: require_if_available()
           },
           programCode: {
-            type: "string",
+            type: ["array", "string"],
             pattern: /\d{3}:\d{2}/,
             required: require_if_available()
           },
